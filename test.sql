@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-07-29 16:42:41
+Date: 2016-08-02 10:05:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,11 +21,16 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `cs_activity`;
 CREATE TABLE `cs_activity` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL COMMENT '活动名称',
+  `begin_number` int(4) DEFAULT '1' COMMENT '开始数',
+  `end_number` int(4) DEFAULT '100' COMMENT '结束数',
   `prize` varchar(255) DEFAULT NULL COMMENT '奖品说明',
   `seller_desc` varchar(1000) DEFAULT NULL COMMENT '商家说明',
   `acti_rule` varchar(1000) DEFAULT NULL COMMENT '活动规则',
   `prize_num` int(3) DEFAULT '1' COMMENT '奖品个数',
+  `begin_time` datetime DEFAULT NULL COMMENT '开始时间',
+  `end_time` datetime DEFAULT NULL COMMENT '结束时间',
+  `open_flag` int(1) DEFAULT '0' COMMENT '开奖标志',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='活动表';
 
@@ -42,6 +47,7 @@ CREATE TABLE `cs_number` (
   `user_id` int(11) NOT NULL,
   `activity_id` int(11) NOT NULL DEFAULT '0' COMMENT '活动id',
   `number` int(4) NOT NULL DEFAULT '0' COMMENT '数值',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='数字表';
 
