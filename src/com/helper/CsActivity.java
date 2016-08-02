@@ -1,9 +1,15 @@
 package com.helper;
 
+import java.util.Date;
+
 public class CsActivity {
     private Integer id;
 
     private String name;
+
+    private Integer beginNumber;
+
+    private Integer endNumber;
 
     private String prize;
 
@@ -12,6 +18,12 @@ public class CsActivity {
     private String actiRule;
 
     private Integer prizeNum;
+
+    private Date beginTime;
+
+    private Date endTime;
+
+    private Integer openFlag;
 
     public Integer getId() {
         return id;
@@ -27,6 +39,22 @@ public class CsActivity {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getBeginNumber() {
+        return beginNumber;
+    }
+
+    public void setBeginNumber(Integer beginNumber) {
+        this.beginNumber = beginNumber;
+    }
+
+    public Integer getEndNumber() {
+        return endNumber;
+    }
+
+    public void setEndNumber(Integer endNumber) {
+        this.endNumber = endNumber;
     }
 
     public String getPrize() {
@@ -59,5 +87,29 @@ public class CsActivity {
 
     public void setPrizeNum(Integer prizeNum) {
         this.prizeNum = prizeNum;
+    }
+
+    public Date getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Date beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Integer getOpenFlag() {
+        return openFlag;
+    }
+
+    public void setOpenFlag(Integer openFlag) {
+        this.openFlag = openFlag;
     }
 }

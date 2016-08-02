@@ -1,5 +1,7 @@
 package com.helper;
 
+import java.util.Date;
+
 public class CsNumber {
     private Integer id;
 
@@ -8,6 +10,8 @@ public class CsNumber {
     private Integer activityId;
 
     private Integer number;
+
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -39,5 +43,13 @@ public class CsNumber {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
